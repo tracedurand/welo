@@ -14,6 +14,11 @@ const SIZES = [
 ];
 
 async function optimizeImages() {
+  if (!fs.existsSync(IMAGES_SRC)) {
+    console.log('Welo Assets/Images not found — skipping image optimization (optimized images already committed).');
+    return;
+  }
+
   fs.mkdirSync(IMAGES_OUT, { recursive: true });
   fs.mkdirSync(LOGOS_OUT, { recursive: true });
 
