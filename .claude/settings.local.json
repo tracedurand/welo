@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(timeout 5 node server.js)",
+      "Bash(pg_isready 2>&1)",
+      "Bash(psql postgres:*)",
+      "Bash(node scripts/init-db.js)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill:*)",
+      "Bash(ls -lh public/images/optimized/*-lg.jpg)",
+      "Read(//Users/tdurand/My Drive/Salesforce/Development/welo-site-claude/**)",
+      "Bash(ls -lh public/images/optimized/*-sm.jpg)",
+      "Bash(gh auth:*)",
+      "Bash(git --version)",
+      "Bash(brew install:*)",
+      "Bash(curl -sI -H 'Accept-Encoding: gzip, deflate' http://localhost:3000/)",
+      "Bash(curl -s -H 'Accept-Encoding: gzip' http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/)"
+    ]
+  }
+}

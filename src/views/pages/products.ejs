@@ -1,0 +1,72 @@
+<section class="products-hero">
+  <div class="container">
+    <h1>Firewall Products</h1>
+    <p>Enterprise-grade protection for every environment &mdash; from small offices to global data centers and multi-cloud architectures.</p>
+  </div>
+</section>
+
+<section class="products-filter">
+  <div class="container">
+    <div class="products-filter__bar">
+      <button class="products-filter__btn active" data-filter="all">All Products</button>
+      <% const categories = [...new Set(products.map(p => p.category))]; %>
+      <% categories.forEach(cat => { %>
+        <button class="products-filter__btn" data-filter="<%= cat %>"><%= cat %></button>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="products-list">
+  <div class="container">
+    <div class="products-list__grid">
+      <% products.forEach(product => { %>
+        <div class="product-card" data-category="<%= product.category %>"<% if (product.is_popular) { %> data-popular="true"<% } %>>
+          <% if (product.is_popular) { %>
+            <span class="product-card__badge">Popular</span>
+          <% } %>
+          <div class="product-card__header">
+            <span class="product-card__category"><%= product.category %></span>
+            <h3 class="product-card__name"><%= product.name %></h3>
+            <p class="product-card__tagline"><%= product.tagline %></p>
+          </div>
+          <div class="product-card__price">
+            <span class="product-card__price-value"><%= product.price %></span>
+          </div>
+          <div class="product-card__specs">
+            <div class="product-card__spec">
+              <span class="product-card__spec-label">Business Size</span>
+              <span class="product-card__spec-value"><%= product.business_size %></span>
+            </div>
+            <div class="product-card__spec">
+              <span class="product-card__spec-label">Max Users</span>
+              <span class="product-card__spec-value"><%= product.max_users %></span>
+            </div>
+            <div class="product-card__spec">
+              <span class="product-card__spec-label">Throughput</span>
+              <span class="product-card__spec-value"><%= product.throughput %></span>
+            </div>
+          </div>
+          <p class="product-card__desc"><%= product.description %></p>
+          <div class="product-card__features">
+            <h4>Key Features</h4>
+            <ul>
+              <% product.features.forEach(feature => { %>
+                <li>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <%= feature %>
+                </li>
+              <% }); %>
+            </ul>
+          </div>
+          <div class="product-card__actions">
+            <a href="#demo" class="btn btn-primary">Purchase Now</a>
+            <a href="#" class="btn btn-secondary-dark">Learn More</a>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta-banner') %>

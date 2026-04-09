@@ -1,0 +1,24 @@
+{
+  "name": "welo-site",
+  "version": "1.0.0",
+  "description": "Welo Cybersecurity - Corporate Website",
+  "main": "server.js",
+  "scripts": {
+    "build:images": "node scripts/optimize-images.js",
+    "start": "node server.js",
+    "dev": "npx nodemon server.js",
+    "init:db": "node scripts/init-db.js",
+    "build": "npm run build:images"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.3.2",
+    "helmet": "^8.1.0",
+    "pg": "^8.20.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.2"
+  }
+}

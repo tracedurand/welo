@@ -1,0 +1,7 @@
+node_modules/
+public/images/optimized/
+public/logos/
+Welo Assets/
+.DS_Store
+.env
+.env.*
