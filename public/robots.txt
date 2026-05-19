@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://welo-cybersecurity-b6a9669477b7.herokuapp.com/sitemap.xml

@@ -77,6 +77,7 @@ app.get('/products', async (req, res) => {
     );
     renderPage(res, 'products', {
       title: 'Firewall Products | Welo',
+      metaDescription: 'Explore Welo\'s 11 firewall products across 6 categories: Edge Firewalls, Enterprise Firewalls, Cloud Firewalls, Web Application Firewalls, Internal Segmentation, and Firewall as a Service. Pricing from $8/user/mo to $49,999/yr.',
       products: rows
     });
   } catch (err) {

@@ -1,3 +1,33 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Welo Firewall Products",
+  "numberOfItems": <%= products.length %>,
+  "itemListElement": [
+    <% products.forEach((product, i) => { %>
+    {
+      "@type": "ListItem",
+      "position": <%= i + 1 %>,
+      "item": {
+        "@type": "Product",
+        "name": "<%= product.name %>",
+        "description": "<%= product.description.replace(/"/g, '\\"') %>",
+        "category": "<%= product.category %>",
+        "brand": { "@type": "Brand", "name": "Welo" },
+        "offers": {
+          "@type": "Offer",
+          "price": "<%= product.price %>",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    }<%= i < products.length - 1 ? ',' : '' %>
+    <% }); %>
+  ]
+}
+</script>
+
 <section class="products-hero">
   <div class="container">
     <h1>Firewall Products</h1>
